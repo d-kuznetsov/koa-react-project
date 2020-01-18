@@ -1,0 +1,138 @@
+@sidebar-width: 150px;
+@dark-color: #20232A;
+@light-color: white;
+@blue-color: #61DAFB;
+
+body {
+  font-size: 18px;
+  font-family: Helvetica Neue, sans-serif;
+  margin: 0px;
+}
+
+// Components
+.layout {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+
+  &-main {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &-content {
+    flex-grow: 1;
+  }
+
+  &-sidebar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: @sidebar-width;
+  }
+}
+
+.header {
+  display: flex;
+  background-color: @dark-color;
+  height: 75px;
+  
+  &-content {
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    width: calc(100% - @sidebar-width*2)
+  }
+  
+  &-nav-item {
+    margin-right: 30px;
+    text-decoration: none;
+    color: white;
+    &:hover {
+      color: #61DAFB;
+    }
+  }
+  
+  &-logout {
+    text-decoration: none;
+    color: #61DAFB;
+    &:hover {
+      color: white;
+    }
+  }
+}
+
+.button {
+  border-radius: 15px;
+  font-size: 15px;
+  font-weight: 700;
+  height: 30px;
+  min-width: 120px;
+  cursor: pointer;
+
+  &-thema-black {
+    color: @light-color;
+    background-color: @dark-color;
+    border-color: @blue-color;
+    &:hover {
+      color: @dark-color;
+      background-color: @light-color;
+    }
+  }
+
+  &-thema-white {
+    color: @dark-color;
+    background-color: @light-color;
+    border-color: @blue-color;
+    &:hover {
+      color: @light-color;
+      background-color: @dark-color;
+    }
+  }
+}
+
+//Pages
+.home-page {
+  display:flex;
+  height: 100%;
+  
+  &-content {
+    margin: auto;
+    display:flex;
+    flex-direction: column;
+  }
+
+  &-button.button {
+    width: 150px;
+    margin: 10px;
+    align-self: center;
+  }
+}
+
+.sign-up-page {
+  display: flex;
+  height: 100%;
+  &-form {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    &-item {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.sign-in-page {
+  display: flex;
+  height: 100%;
+  &-form {
+    margin: auto;
+    flex-direction: column;
+    display: flex;
+    &-item {
+      margin-bottom: 10px;
+    }
+  }
+}
